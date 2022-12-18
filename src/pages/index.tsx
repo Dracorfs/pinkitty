@@ -14,9 +14,13 @@ const Home: NextPage = () => {
         <meta name="description" content="Pin the best dev. toolkits!" />
         <link rel="icon" href="https://img.icons8.com/color/48/null/cat_in_a_box.png" />
       </Head>
-      <header className="fixed top-0 inset-x-0 bg-[hsl(52,99%,62%)] h-auto flex items-center justify-start p-3 gap-1">
-        <img src="https://img.icons8.com/color/48/null/cat_in_a_box.png" alt="Logo" className="h-8 max-h-40" />
-        <p className="text-3xl font-extrabold tracking-tight text-[hsl(280,100%,70%)]">Pinkitty</p>
+      <header className="fixed top-0 inset-x-0 bg-[hsl(52,99%,62%)] h-auto flex items-center justify-between p-3 gap-1">
+        <div className="flex items-center">
+          <img src="https://img.icons8.com/color/48/null/cat_in_a_box.png" alt="Logo" className="h-8 max-h-40" />
+          <p className="flex text-3xl font-extrabold tracking-tight text-[hsl(280,100%,70%)]">
+            Pinkitty
+          </p>
+        </div>
         <AuthShowcase />
       </header>
       <main className="flex min-h-screen flex-col items-center justify-center bg-[hsl(267,72%,63%)]">
@@ -52,7 +56,7 @@ const AuthShowcase: React.FC = () => {
         {secretMessage && <span> - {secretMessage}</span>}
       </p>
       <button
-        className="rounded-full bg-white/10 px-10 py-3 font-semibold text-[hsl(280,100%,70%)] no-underline transition hover:bg-white/20"
+        className="rounded-full px-10 py-3 font-semibold text-[hsl(280,100%,70%)] no-underline transition hover:bg-[hsl(195,100%,49%)]/5"
         onClick={sessionData ? () => signOut() : () => signIn()}
       >
         {sessionData ? "Sign out" : "Sign in"}
